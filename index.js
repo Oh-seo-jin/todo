@@ -6,7 +6,7 @@ const Todo = require('./Models/Todo')
 const app = express()
 app.use(express.json()) // middleware 등록, server에서 json의 형태로 전송
 
-mongoose.connect('mongodb://localhost:27017/todolist')
+mongoose.connect(process.env.DB_URL)
 
 app.get('/get', async(req, res) => {
   const todos = await Todo.find()
