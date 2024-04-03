@@ -20,7 +20,7 @@ app.get('/get', async(req, res) => {
 
 app.post('/add', async(req, res) => {
   const task = req.body.task
-  console.log(task)
+  // console.log(task)
   const todos = await Todo.create({task:task})
   console.log('/add 호출')
   console.log(todos)
